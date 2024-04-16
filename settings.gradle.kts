@@ -54,7 +54,7 @@ pluginManagement {
                 "2022.1" to "E", /* May 3, 2023. */
             ),
             "android" to mapOf(
-                "Preview2023.2" to "8.3.0-alpha16", /* Dec 2, 2023. */
+                "Preview2023.2" to "8.3.0", /* Dec 2, 2023. */
                 "2023.1" to "8.2.0", /* Dec 2, 2023. */
                 "Preview2023.1" to "8.2.0-beta06", /* Oct 11, 2023. */
                 "2022.3" to "8.1.3", /* Nov 13, 2023. */
@@ -355,13 +355,22 @@ pluginManagement {
     buildscript {
 
         repositories {
-            mavenCentral()
-            google()
+            maven("https://mirrors.cloud.tencent.com/nexus/repository/maven-public")
+
+            maven("https://repo.huaweicloud.com/repository/maven/")
+
+            maven("https://maven.aliyun.com/nexus/content/repositories/central")
+            maven("https://maven.aliyun.com/nexus/content/repository/google")
+            maven("https://maven.aliyun.com/nexus/content/repository/gradle-plugin")
+            maven("https://maven.aliyun.com/nexus/content/repository/jcenter")
+
             maven("https://maven.aliyun.com/repository/central")
             maven("https://maven.aliyun.com/repository/google")
             maven("https://maven.aliyun.com/repository/gradle-plugin")
             maven("https://maven.aliyun.com/repository/jcenter")
             maven("https://maven.aliyun.com/repository/public")
+            mavenCentral()
+            google()
         }
 
         dependencies /* Gather platform information. */ {
