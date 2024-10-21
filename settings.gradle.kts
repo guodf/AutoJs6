@@ -61,8 +61,8 @@ pluginManagement {
                 "Preview2022.3" to "8.1.0-beta05", /* Jun 14 2023. */
                 "2022.2" to "8.0.2", /* May 26, 2023. */
                 "Preview2022.2" to "8.0.0-beta05", /* Mar 25, 2023. */
-                "2022.1" to "7.4.2", /* Mar 25, 2023. */
-                fallbackIdentifier to "7.4.2", /* May 3, 2023. */
+                "2022.1" to "8.6.0", /* Mar 25, 2023. */
+                fallbackIdentifier to "8.6.0", /* May 3, 2023. */
             ),
             "kotlin" to mapOf(
                 "Preview2023.2" to "1.9.20-RC", /* Oct 12, 2023. */
@@ -73,7 +73,7 @@ pluginManagement {
                 "2022.2" to "1.8.20-RC2", /* Mar 23, 2023. */
                 "Preview2022.2" to "1.8.0", /* Mar 23, 2023. */
                 "2022.1" to "1.8.0-RC2", /* Dec 20, 2022. */
-                fallbackIdentifier to "1.8.0", /* Aug 17, 2023. */
+                fallbackIdentifier to "1.9.0", /* Aug 17, 2023. */
             )
         ),
         "idea" to mapOf(

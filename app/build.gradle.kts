@@ -518,6 +518,7 @@ android {
 
     kotlinOptions {
         jvmTarget = versions.javaVersion.toString()
+
         // freeCompilerArgs = listOf("-Xjvm-default=all-compatibility")
     }
 
