@@ -372,6 +372,27 @@ android {
             packagingOptions.apply {
                 // @Reference to kkevsekk1/AutoX (https://github.com/kkevsekk1/AutoX) on Nov 16, 2023.
                 //  ! https://github.com/kkevsekk1/AutoX/blob/a6d482189291b460c3be60970b74c5321d26e457/inrt/build.gradle.kts#L91
+
+                jniLibs {
+                    useLegacyPackaging = true
+                }
+                jniLibs.pickFirsts.addAll(
+                    listOf(
+                        "lib/arm64-v8a/libc++_shared.so",
+                        "lib/arm64-v8a/libhiai.so",
+                        "lib/arm64-v8a/libhiai_ir.so",
+                        "lib/arm64-v8a/libhiai_ir_build.so",
+                        "lib/arm64-v8a/libNative.so",
+                        "lib/arm64-v8a/libpaddle_light_api(_shared.so",
+                        "lib/armeabi-v7a/libc++_shared.so",
+                        "lib/armeabi-v7a/libhiai.so",
+                        "lib/armeabi-v7a/libhiai_ir.so",
+                        "lib/armeabi-v7a/libhiai_ir_build.so",
+                        "lib/armeabi-v7a/libNative.so",
+                        "lib/armeabi-v7a/libpaddle_light_api(_shared.so"
+                    )
+                )
+
                 jniLibs.excludes += "*"
                 resources.excludes.addAll(
                     listOf(
@@ -470,31 +491,30 @@ android {
         sourceCompatibility = versions.javaVersion
         targetCompatibility = versions.javaVersion
     }
-
     // @Legacy packagingOptions { ... }
-    packaging {
-        arrayOf(
-            "META-INF/DEPENDENCIES",
-            "META-INF/LICENSE",
-            "META-INF/LICENSE.*",
-            "META-INF/LICENSE-notice.*",
-            "META-INF/license.*",
-            "META-INF/NOTICE",
-            "META-INF/NOTICE.*",
-            "META-INF/notice.*",
-            "META-INF/ASL2.0",
-            "META-INF/*.kotlin_module",
-            "lib/x86/libc++_shared.so",
-            "lib/x86_64/libc++_shared.so",
-            "lib/armeabi-v7a/libc++_shared.so",
-            "lib/arm64-v8a/libc++_shared.so",
-            "lib/armeabi/libc++_shared.so",
-        ).let { resources.pickFirsts.addAll(it) }
-
-        jniLibs {
-            useLegacyPackaging = true
-        }
-    }
+//    packaging {
+//        arrayOf(
+//            "META-INF/DEPENDENCIES",
+//            "META-INF/LICENSE",
+//            "META-INF/LICENSE.*",
+//            "META-INF/LICENSE-notice.*",
+//            "META-INF/license.*",
+//            "META-INF/NOTICE",
+//            "META-INF/NOTICE.*",
+//            "META-INF/notice.*",
+//            "META-INF/ASL2.0",
+//            "META-INF/*.kotlin_module",
+//            "lib/x86/libc++_shared.so",
+//            "lib/x86_64/libc++_shared.so",
+//            "lib/armeabi-v7a/libc++_shared.so",
+//            "lib/arm64-v8a/libc++_shared.so",
+//            "lib/armeabi/libc++_shared.so",
+//        ).let { resources.pickFirsts.addAll(it) }
+//
+//        jniLibs {
+//            useLegacyPackaging = true
+//        }
+//    }
 
     kotlinOptions {
         jvmTarget = versions.javaVersion.toString()

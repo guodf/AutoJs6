@@ -160,7 +160,6 @@ pluginManagement {
         "Y" to "Yeti",
         "Z" to "Zebra",
     )
-
     val platformIdentifierForAS = "AndroidStudio"
     val vendorNameForAS = "Google"
     val platformIdentifierForIdea = "IntelliJIdea"
